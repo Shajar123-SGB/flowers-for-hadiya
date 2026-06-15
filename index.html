@@ -1,25 +1,325 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Flowers for Hadiya 🌸</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Hadiya 🌸</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Poppins,sans-serif;
+overflow:hidden;
+height:100vh;
+background:linear-gradient(-45deg,#fff5f7,#fff8db,#ffe7ef,#fffdf5);
+background-size:400% 400%;
+animation:bgMove 15s ease infinite;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.petal{
+position:absolute;
+font-size:24px;
+pointer-events:none;
+animation:fall linear infinite;
+opacity:.7;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-100px) rotate(0deg);
+}
+100%{
+transform:translateY(120vh) rotate(360deg);
+}
+}
+
+.card{
+width:90%;
+max-width:850px;
+background:rgba(255,255,255,.25);
+backdrop-filter:blur(18px);
+border-radius:30px;
+padding:30px;
+box-shadow:0 20px 60px rgba(0,0,0,.1);
+text-align:center;
+animation:fadeIn 1.2s;
+z-index:2;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.title{
+font-family:'Great Vibes',cursive;
+font-size:70px;
+color:#d65a7a;
+margin-bottom:10px;
+}
+
+.subtitle{
+font-size:18px;
+color:#666;
+margin-bottom:25px;
+}
+
+img{
+width:100%;
+max-width:450px;
+height:450px;
+object-fit:cover;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+transition:.8s;
+animation:bloom 1s;
+}
+
+@keyframes bloom{
+0%{
+transform:scale(.5);
+opacity:0;
+}
+100%{
+transform:scale(1);
+opacity:1;
+}
+}
+
+.message{
+margin-top:25px;
+font-size:22px;
+line-height:1.7;
+color:#444;
+min-height:120px;
+padding:0 10px;
+}
+
+button{
+margin-top:25px;
+padding:16px 40px;
+border:none;
+border-radius:50px;
+background:#ff7aa2;
+color:white;
+font-size:18px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+.final{
+display:none;
+font-family:'Great Vibes';
+font-size:65px;
+color:#d14d72;
+animation:fadeIn 2s;
+}
+
+.credit{
+margin-top:20px;
+font-size:24px;
+font-family:Poppins;
+}
+
+.sparkle{
+position:absolute;
+width:6px;
+height:6px;
+border-radius:50%;
+background:white;
+animation:sparkle 3s infinite;
+}
+
+@keyframes sparkle{
+0%,100%{
+transform:scale(0);
+opacity:0;
+}
+50%{
+transform:scale(2);
+opacity:1;
+}
+}
+
+@media(max-width:768px){
+
+.title{
+font-size:52px;
+}
+
+img{
+height:320px;
+}
+
+.message{
+font-size:18px;
+}
+
+.final{
+font-size:45px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
-<div class="container">
-    <h1>Flowers for Hadiya 🌸</h1>
+<div class="card" id="mainCard">
 
-    <img id="bouquet"
-    src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=800"
-    alt="Bouquet">
+<h1 class="title">For Hadiya 🌸</h1>
 
-    <p id="message">
-        Click below to open your first bouquet 💛
-    </p>
+<p class="subtitle">
+A garden made especially for you
+</p>
 
-    <button onclick="nextBouquet()">Next Bouquet</button>
+<img id="flower"
+src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200">
+
+<div class="message" id="message">
+Click below to begin your bouquet journey 💛
 </div>
 
-<script src="script.js"></script>
+<button onclick="nextBouquet()">
+Open Next Bouquet ✨
+</button>
+
+</div>
+
+<div class="final" id="finalScreen">
+
+Thank You Hadiya ❤️
+
+<div class="credit">
+Every flower was chosen with care.<br><br>
+— Shajar 🌸
+</div>
+
+</div>
+
+<script>
+
+for(let i=0;i<50;i++){
+
+let petal=document.createElement("div");
+petal.className="petal";
+petal.innerHTML=["🌸","🌺","💮"][Math.floor(Math.random()*3)];
+
+petal.style.left=Math.random()*100+"vw";
+petal.style.animationDuration=(6+Math.random()*8)+"s";
+petal.style.fontSize=(18+Math.random()*18)+"px";
+
+document.body.appendChild(petal);
+
+}
+
+for(let i=0;i<80;i++){
+
+let s=document.createElement("div");
+s.className="sparkle";
+
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+s.style.animationDelay=Math.random()*5+"s";
+
+document.body.appendChild(s);
+
+}
+
+const bouquets=[
+
+{
+img:"https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200",
+msg:"💛 Butter Yellow Peonies — Like sunshine on a quiet morning, you make ordinary days brighter."
+},
+
+{
+img:"https://images.unsplash.com/photo-1468327768560-75b778cbb551?w=1200",
+msg:"🌼 Poppy Yellow Peonies — The happiest colours reminded me of the happiest person."
+},
+
+{
+img:"https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=1200",
+msg:"💛🌼 A blend of golden blooms collected from beautiful memories."
+},
+
+{
+img:"https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=1200",
+msg:"🌸 Light Pink Peonies — Soft, graceful and impossible to forget."
+},
+
+{
+img:"https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=1200",
+msg:"🌷 Deep Pink Peonies — For every smile and every moment that became special."
+},
+
+{
+img:"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200",
+msg:"❤️ Maroon Red Peonies — Some people quietly become one of life's favourite chapters."
+},
+
+{
+img:"https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200",
+msg:"✨ Hadiya, every flower here was chosen for a reason. But none are as beautiful as the person receiving them."
+}
+
+];
+
+let current=0;
+
+function nextBouquet(){
+
+if(current<bouquets.length){
+
+document.getElementById("flower").src=
+bouquets[current].img;
+
+document.getElementById("message").innerHTML=
+bouquets[current].msg;
+
+current++;
+
+}else{
+
+document.getElementById("mainCard").style.display="none";
+
+document.getElementById("finalScreen").style.display="block";
+
+}
+
+}
+
+</script>
+
 </body>
 </html>
