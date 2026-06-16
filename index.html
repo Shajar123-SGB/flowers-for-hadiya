@@ -1,236 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For Hadiya 🌸</title>
+<title>For Hadiya ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<style>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-background:#090909;
-overflow:hidden;
-height:100vh;
-font-family:'Cormorant Garamond',serif;
-display:flex;
-justify-content:center;
-align-items:center;
-color:white;
-}
-
-.bg{
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at top,#341100,#090909 60%);
-}
-
-.card{
-position:relative;
-z-index:2;
-width:100%;
-max-width:450px;
-padding:20px;
-text-align:center;
-}
-
-h1{
-font-family:'Great Vibes';
-font-size:4rem;
-color:#ffd7e6;
-margin-bottom:10px;
-}
-
-.subtitle{
-font-size:1.3rem;
-opacity:.8;
-margin-bottom:20px;
-}
-
-.image-wrap{
-overflow:hidden;
-border-radius:30px;
-box-shadow:0 0 50px rgba(255,180,180,.15);
-}
-
-img{
-width:100%;
-display:block;
-transition:1s;
-}
-
-.message{
-margin-top:20px;
-font-size:1.4rem;
-line-height:1.6;
-min-height:120px;
-}
-
-button{
-margin-top:25px;
-border:none;
-padding:15px 35px;
-border-radius:999px;
-background:linear-gradient(45deg,#ff7aa2,#ffb5c9);
-color:white;
-font-size:1rem;
-cursor:pointer;
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-50%{
-transform:scale(1.05);
-}
-}
-
-.petal{
-position:absolute;
-font-size:24px;
-animation:fall linear infinite;
-}
-
-@keyframes fall{
-
-0%{
-transform:translateY(-100px) rotate(0deg);
-opacity:0;
-}
-
-20%{
-opacity:1;
-}
-
-100%{
-transform:translateY(120vh) rotate(360deg);
-opacity:0;
-}
-
-}
-
-.final{
-font-family:'Great Vibes';
-font-size:3rem;
-line-height:1.4;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
 
-<div class="bg"></div>
+<!-- Animated Background -->
 
-<div class="card">
+<div id="background">
 
-<h1>For Hadiya 🌸</h1>
+<div id="gradient"></div>
 
-<div class="subtitle">
-A collection of flowers chosen especially for you
+<div id="particles"></div>
+
+<div id="petals"></div>
+
 </div>
 
-<div class="image-wrap">
-<img id="bouquet" src="butter.jpg">
+
+<!-- Music Button -->
+
+<button id="musicButton">
+
+♫
+
+</button>
+
+
+<!-- Story Progress -->
+
+<div id="progress">
+
+<div class="bar active"></div>
+
+<div class="bar"></div>
+
+<div class="bar"></div>
+
+<div class="bar"></div>
+
+<div class="bar"></div>
+
+<div class="bar"></div>
+
+<div class="bar"></div>
+
 </div>
 
-<div class="message" id="text">
-💛 Like sunshine on a quiet morning, you make ordinary days brighter.
-</div>
 
-<button onclick="nextSlide()">
-Next Bouquet ✨
+<!-- Main Intro -->
+
+<section id="intro">
+
+<div id="introContent">
+
+<p id="line1">
+Some flowers bloom for everyone...
+</p>
+
+<p id="line2">
+These were picked only for you.
+</p>
+
+<h1 id="title">
+For Hadiya
+<span>❤️</span>
+</h1>
+
+<p id="subtitle">
+
+A little garden,
+
+made with love,
+
+by Shajar.
+
+</p>
+
+<button id="enterGarden">
+
+<span>Enter My Garden</span>
+
+<div class="glow"></div>
+
 </button>
 
 </div>
 
-<script>
+</section>
 
-for(let i=0;i<35;i++){
 
-let p=document.createElement("div");
+<!-- Ripple -->
 
-p.className="petal";
-p.innerHTML="🌸";
+<div id="rippleContainer"></div>
 
-p.style.left=Math.random()*100+"vw";
-p.style.animationDuration=(5+Math.random()*10)+"s";
-p.style.animationDelay=Math.random()*5+"s";
 
-document.body.appendChild(p);
+<!-- Loading Petal -->
 
-}
+<div id="magicPetal">
 
-const slides=[
+🌸
 
-{
-img:"butter.jpg",
-msg:"💛 Like sunshine on a quiet morning, you make ordinary days brighter."
-},
+</div>
 
-{
-img:"popes.jpg",
-msg:"🌼 Some people leave footprints. You leave entire gardens."
-},
 
-{
-img:"combo.jpg",
-msg:"💛🌼 The happiest colours reminded me of the happiest person."
-},
-
-{
-img:"lightpink.jpg",
-msg:"🌸 Soft, gentle and beautiful in ways words struggle to describe."
-},
-
-{
-img:"darkpink.jpg",
-msg:"🌷 For every smile, every memory and every moment that became special."
-},
-
-{
-img:"maroon.jpg",
-msg:"❤️ Some people quietly become one of life's favourite chapters."
-},
-
-{
-img:"",
-msg:"Every flower here was chosen for a reason.<br><br>But none are as beautiful as the person receiving them.<br><br>❤️ Hadiya ❤️"
-}
-
-];
-
-let current=0;
-
-function nextSlide(){
-
-current++;
-
-if(current>=slides.length){
-
-document.querySelector('.image-wrap').style.display='none';
-
-document.getElementById('text').innerHTML=
-'<div class=\"final\">Thank You Hadiya 🌸<br><br>— Shajar</div>';
-
-return;
-}
-
-document.getElementById('bouquet').src=slides[current].img;
-document.getElementById('text').innerHTML=slides[current].msg;
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
+
 </html>
