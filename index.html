@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,9 +8,12 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<title>A Garden For Hadiya 🌸</title>
-
 <meta name="theme-color" content="#090909">
+
+<meta name="description"
+content="A luxurious digital flower garden made especially for Hadiya.">
+
+<title>A Garden For Hadiya 🌸</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -25,39 +27,83 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable
 
 <body>
 
-<!-- Background -->
+<!-- ==========================================
+                LOADER
+=========================================== -->
 
-<div id="background">
+<div id="loader">
 
-<div id="gradient"></div>
+    <div class="loaderFlower">
 
-<div id="particles"></div>
+        🌸
 
-<div id="petals"></div>
-
-<div id="fireflies"></div>
+    </div>
 
 </div>
 
-<!-- Music -->
+<!-- ==========================================
+            BACKGROUND EFFECTS
+=========================================== -->
 
-<button id="musicButton">
+<div id="background">
+
+    <div id="gradient"></div>
+
+    <div id="particles"></div>
+
+    <div id="petals"></div>
+
+    <div id="fireflies"></div>
+
+    <div id="sparkles"></div>
+
+    <div id="butterflies"></div>
+
+</div>
+
+<!-- ==========================================
+                MUSIC
+=========================================== -->
+
+<button
+id="musicButton"
+aria-label="Toggle Music">
 
 ♫
 
 </button>
 
-<audio id="music" loop>
+<audio
+id="music"
+loop>
 
-<source src="music/piano.mp3" type="audio/mpeg">
+<source
+src="music/piano.mp3"
+type="audio/mpeg">
 
 </audio>
 
-<!-- Progress -->
+<!-- ==========================================
+            STORY PROGRESS
+=========================================== -->
 
 <div id="progress"></div>
 
-<!-- Story Screen -->
+<!-- ==========================================
+        TOUCH NAVIGATION
+=========================================== -->
+
+<div id="touchNavigation">
+
+    <div id="leftTap"></div>
+
+    <div id="rightTap"></div>
+
+</div>
+
+<!-- ==========================================
+            STORY SCREEN
+=========================================== -->
 
 <section id="storyScreen">
 
@@ -66,7 +112,9 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable
 <img
 id="storyImage"
 src=""
-alt="Bouquet">
+alt="Luxury Peony Bouquet"
+loading="eager"
+draggable="false">
 
 <div id="imageOverlay"></div>
 
@@ -101,7 +149,9 @@ you brighten every place you walk into.
 
 </section>
 
-<!-- Intro -->
+<!-- ==========================================
+            INTRO SCREEN
+=========================================== -->
 
 <section id="introScreen">
 
@@ -152,88 +202,133 @@ Enter My Garden
 </div>
 
 </section>
-
-<!-- Ending -->
+<!-- ==========================================
+                ENDING SCREEN
+=========================================== -->
 
 <section id="endingScreen">
 
-<div id="endingContent">
+    <div id="endingContent">
 
-<p id="endingLine">
+        <p id="endingLine">
 
-There was one flower
-I couldn't fit
-into this garden...
+            There was one flower
+            I couldn't fit
+            into this garden...
 
-</p>
+        </p>
 
-<button id="dontClick">
+        <button id="dontClick">
 
-⚠ Don't Click
+            ⚠ Don't Click
 
-</button>
+        </button>
 
-</div>
+    </div>
 
 </section>
 
-<!-- Secret Garden -->
+<!-- ==========================================
+            SECRET GARDEN
+=========================================== -->
 
 <section id="secretGarden">
 
-<div id="secretParticles"></div>
+    <div id="secretParticles"></div>
 
-<div id="secretPetals"></div>
+    <div id="secretPetals"></div>
 
-<img
-id="hijabiGirl"
-src="images/hijabi.png"
-alt="Hijabi Girl">
+    <img
+        id="hijabiGirl"
+        src="images/hijabi.png"
+        alt="A beautiful hijabi girl"
+        loading="lazy"
+        draggable="false">
 
-<h1>
+    <h1 id="secretTitle">
 
-For Hadiya ❤️
+        For Hadiya ❤️
 
-</h1>
+    </h1>
 
-<p>
+    <p id="secretMessage">
 
-Every flower here
+        Every flower here
+        was chosen carefully.
 
-was chosen carefully.
+        <br><br>
 
-<br><br>
+        Every bouquet
+        carries a memory.
 
-But none of them
+        <br><br>
 
-are as beautiful
+        Every colour
+        carries a feeling.
 
-as the person
+        <br><br>
 
-receiving them.
+        But none of them
+        are as beautiful
+        as the person
+        receiving them.
 
-<br><br>
+        <br><br>
 
-❤️
+        Thank you for being
+        one of the brightest
+        parts of my life.
 
-<br>
+        <br><br>
 
-— Shajar
+        ❤️
 
-</p>
+        <br>
+
+        — Shajar
+
+    </p>
 
 </section>
 
-<!-- Ripple -->
+<!-- ==========================================
+                RIPPLE EFFECT
+=========================================== -->
 
 <div id="rippleContainer"></div>
 
-<script src="script.js"></script>
-  
+<!-- ==========================================
+                SWIPE HINT
+=========================================== -->
+
 <div id="swipeHint">
-    Tap left • Tap right • Swipe
+
+    Tap Left • Tap Right • Swipe
+
 </div>
+
+<!-- ==========================================
+            PRELOAD IMAGES
+=========================================== -->
+
+<div style="display:none;">
+
+    <img src="images/butter.png" alt="">
+    <img src="images/popes.png" alt="">
+    <img src="images/combo.png" alt="">
+    <img src="images/lightpink.png" alt="">
+    <img src="images/darkpink.png" alt="">
+    <img src="images/maroon.png" alt="">
+    <img src="images/hijabi.png" alt="">
+
+</div>
+
+<!-- ==========================================
+                SCRIPT
+=========================================== -->
+
+<script src="script.js"></script>
+
 </body>
 
 </html>
-```
