@@ -1,27 +1,718 @@
+/* =========================
+   FOR HADIYA
+   Part 1B
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
-    background:#fff8f0;
-    font-family:Arial,sans-serif;
-    text-align:center;
-    margin:0;
-    padding:40px;
+
+height:100vh;
+overflow:hidden;
+
+font-family:"Cormorant Garamond",serif;
+
+background:#070707;
+
+color:white;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+position:relative;
+
 }
 
-.container{
-    max-width:700px;
-    margin:auto;
+/* ===========================
+BACKGROUND
+=========================== */
+
+#background{
+
+position:fixed;
+inset:0;
+
+overflow:hidden;
+
+z-index:-20;
+
 }
 
-img{
-    width:100%;
-    max-width:500px;
-    border-radius:20px;
+#gradient{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(circle at top,
+rgba(255,190,110,.18),
+transparent 45%),
+
+radial-gradient(circle at bottom,
+rgba(255,90,130,.12),
+transparent 55%),
+
+linear-gradient(
+180deg,
+#090909,
+#050505,
+#090909);
+
+animation:
+
+gradientMove 18s ease infinite,
+breathe 12s ease-in-out infinite;
+
 }
 
-button{
-    margin-top:20px;
-    padding:12px 25px;
-    font-size:18px;
-    border:none;
-    border-radius:30px;
-    cursor:pointer;
+@keyframes gradientMove{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+@keyframes breathe{
+
+0%,100%{
+
+filter:brightness(100%);
+
+}
+
+50%{
+
+filter:brightness(115%);
+
+}
+
+}
+
+/* ===========================
+Particles
+=========================== */
+
+#particles{
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+}
+
+.particle{
+
+position:absolute;
+
+width:3px;
+
+height:3px;
+
+background:#FFD979;
+
+border-radius:50%;
+
+box-shadow:
+
+0 0 12px #FFD979,
+
+0 0 25px rgba(255,217,121,.7);
+
+animation:particleFloat linear infinite;
+
+}
+
+@keyframes particleFloat{
+
+0%{
+
+transform:
+
+translateY(110vh)
+
+scale(0);
+
+opacity:0;
+
+}
+
+15%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+
+translateY(-20vh)
+
+scale(1.6);
+
+opacity:0;
+
+}
+
+}
+
+/* ===========================
+Petals
+=========================== */
+
+#petals{
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+}
+
+.petal{
+
+position:absolute;
+
+font-size:24px;
+
+opacity:.75;
+
+animation:petalFall linear infinite;
+
+filter:drop-shadow(0 0 12px rgba(255,210,230,.5));
+
+}
+
+@keyframes petalFall{
+
+0%{
+
+transform:
+
+translateY(-120px)
+
+rotate(0deg)
+
+translateX(0);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+50%{
+
+transform:
+
+translateY(50vh)
+
+translateX(30px)
+
+rotate(120deg);
+
+}
+
+100%{
+
+transform:
+
+translateY(115vh)
+
+translateX(-40px)
+
+rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+/* ===========================
+Progress
+=========================== */
+
+#progress{
+
+position:fixed;
+
+top:18px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+display:flex;
+
+gap:7px;
+
+width:92%;
+
+max-width:520px;
+
+z-index:100;
+
+}
+
+.bar{
+
+flex:1;
+
+height:4px;
+
+border-radius:30px;
+
+background:
+
+rgba(255,255,255,.12);
+
+overflow:hidden;
+
+}
+
+.bar.active{
+
+background:
+
+linear-gradient(90deg,
+
+#FFE9B4,
+
+#FFD369);
+
+box-shadow:
+
+0 0 10px #FFD369;
+
+}
+
+/* ===========================
+Music Button
+=========================== */
+
+#musicButton{
+
+position:fixed;
+
+top:22px;
+
+right:18px;
+
+width:48px;
+
+height:48px;
+
+border:none;
+
+border-radius:50%;
+
+background:
+
+rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+color:#FFD369;
+
+font-size:20px;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:
+
+0 0 20px rgba(255,211,105,.15);
+
+z-index:200;
+
+}
+
+#musicButton:hover{
+
+transform:scale(1.08);
+
+box-shadow:
+
+0 0 35px rgba(255,211,105,.45);
+
+}
+
+/* ===========================
+Main Card
+=========================== */
+
+#intro{
+
+width:100%;
+
+padding:25px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+#introContent{
+
+width:100%;
+
+max-width:430px;
+
+padding:35px;
+
+border-radius:35px;
+
+background:
+
+rgba(255,255,255,.05);
+
+backdrop-filter:blur(20px);
+
+border:
+
+1px solid rgba(255,255,255,.08);
+
+text-align:center;
+
+box-shadow:
+
+0 30px 80px rgba(0,0,0,.4);
+
+animation:
+
+cardFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes cardFloat{
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+}
+
+/* ===========================
+Typography
+=========================== */
+
+#line1,
+
+#line2{
+
+font-size:24px;
+
+opacity:.75;
+
+line-height:1.7;
+
+margin-bottom:18px;
+
+animation:fadeUp 1.5s ease;
+
+}
+
+#title{
+
+font-family:"Great Vibes";
+
+font-size:68px;
+
+font-weight:400;
+
+color:#FFE7C8;
+
+margin-top:15px;
+
+margin-bottom:12px;
+
+text-shadow:
+
+0 0 25px rgba(255,217,121,.25);
+
+animation:titleGlow 5s infinite;
+
+}
+
+#title span{
+
+font-size:52px;
+
+}
+
+#subtitle{
+
+font-size:23px;
+
+line-height:1.8;
+
+opacity:.8;
+
+margin-top:18px;
+
+margin-bottom:35px;
+
+}
+
+@keyframes titleGlow{
+
+50%{
+
+text-shadow:
+
+0 0 40px rgba(255,220,150,.5);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+/* ===========================
+Enter Button
+=========================== */
+
+#enterGarden{
+
+position:relative;
+
+overflow:hidden;
+
+padding:18px 40px;
+
+border:none;
+
+border-radius:60px;
+
+cursor:pointer;
+
+font-family:Poppins,sans-serif;
+
+font-size:17px;
+
+font-weight:600;
+
+color:white;
+
+background:
+
+linear-gradient(135deg,
+
+#F5B942,
+
+#FF8CB4);
+
+transition:.35s;
+
+box-shadow:
+
+0 15px 35px rgba(255,180,120,.3);
+
+}
+
+#enterGarden:hover{
+
+transform:
+
+translateY(-3px)
+
+scale(1.03);
+
+box-shadow:
+
+0 25px 60px rgba(255,180,120,.45);
+
+}
+
+#enterGarden:active{
+
+transform:scale(.97);
+
+}
+
+.glow{
+
+position:absolute;
+
+width:200px;
+
+height:200px;
+
+left:-100px;
+
+top:-80px;
+
+background:
+
+radial-gradient(circle,
+
+rgba(255,255,255,.5),
+
+transparent 70%);
+
+animation:glowMove 6s linear infinite;
+
+}
+
+@keyframes glowMove{
+
+0%{
+
+transform:translateX(-120px);
+
+}
+
+100%{
+
+transform:translateX(260px);
+
+}
+
+}
+
+/* ===========================
+Magic Petal
+=========================== */
+
+#magicPetal{
+
+position:fixed;
+
+left:50%;
+
+top:-60px;
+
+transform:translateX(-50%);
+
+font-size:42px;
+
+opacity:0;
+
+z-index:500;
+
+}
+
+/* ===========================
+Ripple
+=========================== */
+
+.ripple{
+
+position:absolute;
+
+border-radius:50%;
+
+background:
+
+rgba(255,255,255,.35);
+
+transform:scale(0);
+
+animation:ripple .8s linear;
+
+pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+to{
+
+transform:scale(10);
+
+opacity:0;
+
+}
+
+}
+
+/* ===========================
+Responsive
+=========================== */
+
+@media(max-width:600px){
+
+#title{
+
+font-size:56px;
+
+}
+
+#line1,
+#line2{
+
+font-size:21px;
+
+}
+
+#subtitle{
+
+font-size:20px;
+
+}
+
+#introContent{
+
+padding:28px;
+
+}
+
+#enterGarden{
+
+width:100%;
+
+}
+
 }
