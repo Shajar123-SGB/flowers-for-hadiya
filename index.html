@@ -4,14 +4,20 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport"
-content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>🌸 For Hadiya</title>
 
-<meta name="theme-color" content="#0b0b0b">
+<meta name="theme-color" content="#090909">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -22,25 +28,21 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
 <body>
 
-<!-- ===========================
-Animated Background
-=========================== -->
+<!-- Animated Background -->
 
 <div id="background">
 
 <div id="gradient"></div>
 
-<div id="stars"></div>
-
 <div id="particles"></div>
 
 <div id="petals"></div>
 
+<div id="fireflies"></div>
+
 </div>
 
-<!-- ===========================
-Music Button
-=========================== -->
+<!-- Music -->
 
 <button id="musicBtn">
 
@@ -48,128 +50,65 @@ Music Button
 
 </button>
 
-<!-- ===========================
-Progress Bars
-=========================== -->
+<audio id="bgMusic" loop>
+
+<source src="music/piano.mp3" type="audio/mpeg">
+
+</audio>
+
+<!-- Story Progress -->
 
 <div id="progressContainer">
 
 </div>
 
-<!-- ===========================
-Story Container
-=========================== -->
-
-<main id="storyContainer">
-
-<div id="storyCard">
-
-<!-- Bouquet -->
-
-<div id="imageContainer">
-
-<img
-id="storyImage"
-src=""
-alt="Bouquet">
-
-<div id="imageGlow"></div>
-
-</div>
-
-<!-- Content -->
-
-<div id="content">
-
-<h1 id="storyTitle">
-
-For Hadiya
-
-</h1>
-
-<p id="storySubtitle">
-
-A little garden,
-made only for you.
-
-</p>
-
-<p id="storyMessage">
-
-Every flower in this collection
-was chosen with love.
-
-</p>
-
-</div>
-
-</div>
-
-</main>
-
-<!-- ===========================
-Bottom Hint
-=========================== -->
-
-<div id="hint">
-
-<span>
-
-← Swipe →
-
-</span>
-
-</div>
-
-<!-- ===========================
-Enter Screen
-=========================== -->
+<!-- Intro Screen -->
 
 <section id="intro">
 
-<div id="introContent">
+<div class="introBox">
 
-<div id="introFlower">
+<div class="introFlower">
 
 🌸
 
 </div>
 
-<h2>
+<p class="introLine">
 
 Some flowers bloom
 for everyone...
 
-</h2>
+</p>
 
-<h3>
+<p class="introLine delay">
 
 These were picked
 only for you.
 
-</h3>
+</p>
 
 <h1>
 
-For Hadiya ❤️
+For Hadiya
+
+<span>❤️</span>
 
 </h1>
 
-<p>
+<p class="introText">
 
-A small digital garden,
-made with love,
+A little digital garden
+
+made with love
+
 by Shajar.
 
 </p>
 
 <button id="enterBtn">
 
-<span>
-
 Enter My Garden
-
-</span>
 
 <div class="buttonGlow"></div>
 
@@ -179,16 +118,107 @@ Enter My Garden
 
 </section>
 
-<!-- ===========================
-Secret Ending
-=========================== -->
+<!-- Story Viewer -->
 
-<section id="secretScreen">
+<main id="viewer">
+
+<div id="story">
+
+<div id="imageWrapper">
 
 <img
-id="hijabiGirl"
+
+id="storyImage"
+
+src=""
+
+alt="Bouquet"
+
+>
+
+</div>
+
+<div id="textContent">
+
+<h2 id="storyName">
+
+Butter Yellow
+
+</h2>
+
+<h3 id="storyType">
+
+Peony Bouquet
+
+</h3>
+
+<p id="storyMessage">
+
+Message appears here...
+
+</p>
+
+</div>
+
+</div>
+
+</main>
+
+<!-- Touch Areas -->
+
+<div id="leftTap"></div>
+
+<div id="rightTap"></div>
+
+<!-- Bottom Hint -->
+
+<div id="swipeHint">
+
+Swipe • or • Tap
+
+</div>
+
+<!-- Secret Ending -->
+
+<section id="ending">
+
+<div id="endingContent">
+
+<p id="endingText">
+
+There's one last flower...
+
+</p>
+
+<button id="secretButton">
+
+⚠ Don't Click
+
+</button>
+
+</div>
+
+</section>
+
+<!-- Hidden Garden -->
+
+<section id="secretGarden">
+
+<div id="gardenBackground"></div>
+
+<div id="gardenPetals"></div>
+
+<img
+
+id="hijabi"
+
 src="images/hijabi.png"
-alt="Hijabi Girl">
+
+alt="Beautiful Hijabi Illustration"
+
+>
+
+<div id="gardenMessage">
 
 <h1>
 
@@ -196,35 +226,39 @@ For Hadiya ❤️
 
 </h1>
 
-<p id="secretText">
+<p>
+
+Every flower in this garden
+
+was chosen carefully.
+
+<br><br>
+
+But none of them
+
+are as beautiful
+
+as the person
+
+receiving them.
+
+<br><br>
+
+❤️
+
+<br>
+
+— Shajar
 
 </p>
 
-<button id="restartBtn">
-
-Visit Again 🌸
-
-</button>
+</div>
 
 </section>
 
-<!-- ===========================
-Audio
-=========================== -->
+<!-- Ripple Container -->
 
-<audio
-id="music"
-loop>
-
-<source
-src="music/piano.mp3"
-type="audio/mpeg">
-
-</audio>
-
-<!-- ===========================
-JavaScript
-=========================== -->
+<div id="ripples"></div>
 
 <script src="script.js"></script>
 
