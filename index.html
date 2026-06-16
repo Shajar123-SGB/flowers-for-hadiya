@@ -4,14 +4,17 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-<title>For Hadiya ❤️</title>
+<title>🌸 For Hadiya</title>
+
+<meta name="theme-color" content="#0b0b0b">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 
@@ -19,11 +22,15 @@
 
 <body>
 
-<!-- Animated Background -->
+<!-- ===========================
+Animated Background
+=========================== -->
 
 <div id="background">
 
 <div id="gradient"></div>
+
+<div id="stars"></div>
 
 <div id="particles"></div>
 
@@ -31,71 +38,140 @@
 
 </div>
 
+<!-- ===========================
+Music Button
+=========================== -->
 
-<!-- Music Button -->
-
-<button id="musicButton">
+<button id="musicBtn">
 
 ♫
 
 </button>
 
+<!-- ===========================
+Progress Bars
+=========================== -->
 
-<!-- Story Progress -->
-
-<div id="progress">
-
-<div class="bar active"></div>
-
-<div class="bar"></div>
-
-<div class="bar"></div>
-
-<div class="bar"></div>
-
-<div class="bar"></div>
-
-<div class="bar"></div>
-
-<div class="bar"></div>
+<div id="progressContainer">
 
 </div>
 
+<!-- ===========================
+Story Container
+=========================== -->
 
-<!-- Main Intro -->
+<main id="storyContainer">
+
+<div id="storyCard">
+
+<!-- Bouquet -->
+
+<div id="imageContainer">
+
+<img
+id="storyImage"
+src=""
+alt="Bouquet">
+
+<div id="imageGlow"></div>
+
+</div>
+
+<!-- Content -->
+
+<div id="content">
+
+<h1 id="storyTitle">
+
+For Hadiya
+
+</h1>
+
+<p id="storySubtitle">
+
+A little garden,
+made only for you.
+
+</p>
+
+<p id="storyMessage">
+
+Every flower in this collection
+was chosen with love.
+
+</p>
+
+</div>
+
+</div>
+
+</main>
+
+<!-- ===========================
+Bottom Hint
+=========================== -->
+
+<div id="hint">
+
+<span>
+
+← Swipe →
+
+</span>
+
+</div>
+
+<!-- ===========================
+Enter Screen
+=========================== -->
 
 <section id="intro">
 
 <div id="introContent">
 
-<p id="line1">
-Some flowers bloom for everyone...
-</p>
+<div id="introFlower">
 
-<p id="line2">
-These were picked only for you.
-</p>
+🌸
 
-<h1 id="title">
-For Hadiya
-<span>❤️</span>
+</div>
+
+<h2>
+
+Some flowers bloom
+for everyone...
+
+</h2>
+
+<h3>
+
+These were picked
+only for you.
+
+</h3>
+
+<h1>
+
+For Hadiya ❤️
+
 </h1>
 
-<p id="subtitle">
+<p>
 
-A little garden,
-
+A small digital garden,
 made with love,
-
 by Shajar.
 
 </p>
 
-<button id="enterGarden">
+<button id="enterBtn">
 
-<span>Enter My Garden</span>
+<span>
 
-<div class="glow"></div>
+Enter My Garden
+
+</span>
+
+<div class="buttonGlow"></div>
 
 </button>
 
@@ -103,20 +179,52 @@ by Shajar.
 
 </section>
 
+<!-- ===========================
+Secret Ending
+=========================== -->
 
-<!-- Ripple -->
+<section id="secretScreen">
 
-<div id="rippleContainer"></div>
+<img
+id="hijabiGirl"
+src="images/hijabi.png"
+alt="Hijabi Girl">
 
+<h1>
 
-<!-- Loading Petal -->
+For Hadiya ❤️
 
-<div id="magicPetal">
+</h1>
 
-🌸
+<p id="secretText">
 
-</div>
+</p>
 
+<button id="restartBtn">
+
+Visit Again 🌸
+
+</button>
+
+</section>
+
+<!-- ===========================
+Audio
+=========================== -->
+
+<audio
+id="music"
+loop>
+
+<source
+src="music/piano.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<!-- ===========================
+JavaScript
+=========================== -->
 
 <script src="script.js"></script>
 
