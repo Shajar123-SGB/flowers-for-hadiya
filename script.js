@@ -1,51 +1,264 @@
-const bouquets = [
+/* ==========================================
+   FOR HADIYA
+   PART 1C-1
+========================================== */
 
-{
-img:"https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=800",
-msg:"💛 Butter Yellow Peonies — Like sunshine on a quiet morning, you make ordinary days brighter."
-},
+const particlesContainer = document.getElementById("particles");
+const petalsContainer = document.getElementById("petals");
 
-{
-img:"https://images.unsplash.com/photo-1468327768560-75b778cbb551?w=800",
-msg:"🌼 Poppy Yellow Peonies — Some people leave footprints. You leave entire gardens."
-},
+const line1 = document.getElementById("line1");
+const line2 = document.getElementById("line2");
+const title = document.getElementById("title");
+const subtitle = document.getElementById("subtitle");
+const enterButton = document.getElementById("enterGarden");
+const magicPetal = document.getElementById("magicPetal");
 
-{
-img:"https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800",
-msg:"💛🌼 Yellow Mix — The happiest colors reminded me of the happiest person."
-},
+/* Hide everything first */
 
-{
-img:"https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=800",
-msg:"🌸 Light Pink Peonies — Soft, gentle, and beautiful in ways words struggle to describe."
-},
+[line1,line2,title,subtitle,enterButton].forEach(el=>{
+    el.style.opacity="0";
+});
 
-{
-img:"https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=800",
-msg:"🌷 Dark Pink Peonies — For all the laughter and memories we've shared."
-},
+enterButton.style.transform="translateY(40px)";
 
-{
-img:"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800",
-msg:"❤️ Maroon Red Peonies — Some friendships become family."
-},
+/* ==========================================
+      GOLD PARTICLES
+========================================== */
 
-{
-img:"https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800",
-msg:"🌸💛❤️ Every flower here was chosen for a reason, but none are as wonderful as you, Hadiya. — Shajar"
+function createParticle(){
+
+    const p=document.createElement("div");
+
+    p.className="particle";
+
+    p.style.left=Math.random()*100+"vw";
+
+    p.style.animationDuration=
+        (10+Math.random()*12)+"s";
+
+    p.style.animationDelay=
+        Math.random()*5+"s";
+
+    p.style.opacity=Math.random();
+
+    particlesContainer.appendChild(p);
+
+    setTimeout(()=>{
+
+        p.remove();
+
+    },22000);
+
 }
 
+setInterval(createParticle,180);
+
+for(let i=0;i<35;i++){
+
+    createParticle();
+
+}
+
+/* ==========================================
+         FLOWER PETALS
+========================================== */
+
+const flowers=[
+"🌸",
+"🌺",
+"💮"
 ];
 
-let index = 0;
+function createPetal(){
 
-function nextBouquet(){
-    document.getElementById("bouquet").src = bouquets[index].img;
-    document.getElementById("message").innerText = bouquets[index].msg;
+    const petal=document.createElement("div");
 
-    index++;
+    petal.className="petal";
 
-    if(index >= bouquets.length){
-        index = 0;
-    }
+    petal.innerHTML=
+        flowers[Math.floor(Math.random()*flowers.length)];
+
+    petal.style.left=Math.random()*100+"vw";
+
+    petal.style.animationDuration=
+        (8+Math.random()*8)+"s";
+
+    petal.style.animationDelay=
+        Math.random()*2+"s";
+
+    petal.style.fontSize=
+        (18+Math.random()*20)+"px";
+
+    petalsContainer.appendChild(petal);
+
+    setTimeout(()=>{
+
+        petal.remove();
+
+    },18000);
+
 }
+
+setInterval(createPetal,700);
+
+for(let i=0;i<15;i++){
+
+    createPetal();
+
+}
+
+/* ==========================================
+      MAGIC OPENING PETAL
+========================================== */
+
+function startMagicPetal(){
+
+magicPetal.style.opacity="1";
+
+magicPetal.animate(
+
+[
+{
+transform:"translate(-50%,-80px) scale(.5)"
+},
+
+{
+transform:"translate(-50%,45vh) scale(1.5)"
+}
+
+],
+
+{
+
+duration:3500,
+
+fill:"forwards",
+
+easing:"ease-in-out"
+
+}
+
+);
+
+setTimeout(()=>{
+
+magicPetal.animate(
+
+[
+{
+opacity:1,
+transform:"translate(-50%,45vh) scale(1.5)"
+},
+
+{
+opacity:0,
+transform:"translate(-50%,45vh) scale(6)"
+}
+
+],
+
+{
+
+duration:1200,
+
+fill:"forwards"
+
+}
+
+);
+
+},3400);
+
+}
+
+startMagicPetal();
+
+/* ==========================================
+     FADE IN SEQUENCE
+========================================== */
+
+function showElement(el){
+
+el.animate(
+
+[
+{
+opacity:0,
+transform:"translateY(30px)"
+},
+
+{
+opacity:1,
+transform:"translateY(0px)"
+}
+
+],
+
+{
+
+duration:1200,
+
+fill:"forwards",
+
+easing:"ease"
+
+}
+
+);
+
+}
+
+/* Start after petal */
+
+setTimeout(()=>{
+
+showElement(line1);
+
+},4200);
+
+setTimeout(()=>{
+
+showElement(line2);
+
+},6200);
+
+setTimeout(()=>{
+
+showElement(title);
+
+},8500);
+
+setTimeout(()=>{
+
+showElement(subtitle);
+
+},9800);
+
+setTimeout(()=>{
+
+showElement(enterButton);
+
+enterButton.animate(
+
+[
+{
+transform:"translateY(40px)"
+},
+
+{
+transform:"translateY(0)"
+}
+
+],
+
+{
+
+duration:1200,
+
+fill:"forwards"
+
+}
+
+);
+
+},11100);
