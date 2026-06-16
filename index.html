@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,13 +9,9 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<title>🌸 For Hadiya</title>
+<title>A Garden For Hadiya 🌸</title>
 
 <meta name="theme-color" content="#090909">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -28,7 +25,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable
 
 <body>
 
-<!-- Animated Background -->
+<!-- Background -->
 
 <div id="background">
 
@@ -44,44 +41,86 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable
 
 <!-- Music -->
 
-<button id="musicBtn">
+<button id="musicButton">
 
 ♫
 
 </button>
 
-<audio id="bgMusic" loop>
+<audio id="music" loop>
 
 <source src="music/piano.mp3" type="audio/mpeg">
 
 </audio>
 
-<!-- Story Progress -->
+<!-- Progress -->
 
-<div id="progressContainer">
+<div id="progress"></div>
+
+<!-- Story Screen -->
+
+<section id="storyScreen">
+
+<div id="storyImageContainer">
+
+<img
+id="storyImage"
+src=""
+alt="Bouquet">
+
+<div id="imageOverlay"></div>
 
 </div>
 
-<!-- Intro Screen -->
+<div id="storyContent">
 
-<section id="intro">
+<div id="storyInfo">
 
-<div class="introBox">
+<h1 id="storyTitle">
 
-<div class="introFlower">
+Butter Yellow
+
+</h1>
+
+<h2 id="storySubtitle">
+
+Peony Bouquet
+
+</h2>
+
+<p id="storyMessage">
+
+Like sunshine after the rain,
+you brighten every place you walk into.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Intro -->
+
+<section id="introScreen">
+
+<div id="introContent">
+
+<div id="flowerIcon">
 
 🌸
 
 </div>
 
-<p class="introLine">
+<p class="intro1">
 
 Some flowers bloom
 for everyone...
 
 </p>
 
-<p class="introLine delay">
+<p class="intro2">
 
 These were picked
 only for you.
@@ -90,13 +129,11 @@ only for you.
 
 <h1>
 
-For Hadiya
-
-<span>❤️</span>
+For Hadiya ❤️
 
 </h1>
 
-<p class="introText">
+<p class="intro3">
 
 A little digital garden
 
@@ -106,11 +143,9 @@ by Shajar.
 
 </p>
 
-<button id="enterBtn">
+<button id="enterGarden">
 
 Enter My Garden
-
-<div class="buttonGlow"></div>
 
 </button>
 
@@ -118,79 +153,21 @@ Enter My Garden
 
 </section>
 
-<!-- Story Viewer -->
+<!-- Ending -->
 
-<main id="viewer">
-
-<div id="story">
-
-<div id="imageWrapper">
-
-<img
-
-id="storyImage"
-
-src=""
-
-alt="Bouquet"
-
->
-
-</div>
-
-<div id="textContent">
-
-<h2 id="storyName">
-
-Butter Yellow
-
-</h2>
-
-<h3 id="storyType">
-
-Peony Bouquet
-
-</h3>
-
-<p id="storyMessage">
-
-Message appears here...
-
-</p>
-
-</div>
-
-</div>
-
-</main>
-
-<!-- Touch Areas -->
-
-<div id="leftTap"></div>
-
-<div id="rightTap"></div>
-
-<!-- Bottom Hint -->
-
-<div id="swipeHint">
-
-Swipe • or • Tap
-
-</div>
-
-<!-- Secret Ending -->
-
-<section id="ending">
+<section id="endingScreen">
 
 <div id="endingContent">
 
-<p id="endingText">
+<p id="endingLine">
 
-There's one last flower...
+There was one flower
+I couldn't fit
+into this garden...
 
 </p>
 
-<button id="secretButton">
+<button id="dontClick">
 
 ⚠ Don't Click
 
@@ -200,25 +177,18 @@ There's one last flower...
 
 </section>
 
-<!-- Hidden Garden -->
+<!-- Secret Garden -->
 
 <section id="secretGarden">
 
-<div id="gardenBackground"></div>
+<div id="secretParticles"></div>
 
-<div id="gardenPetals"></div>
+<div id="secretPetals"></div>
 
 <img
-
-id="hijabi"
-
+id="hijabiGirl"
 src="images/hijabi.png"
-
-alt="Beautiful Hijabi Illustration"
-
->
-
-<div id="gardenMessage">
+alt="Hijabi Girl">
 
 <h1>
 
@@ -228,7 +198,7 @@ For Hadiya ❤️
 
 <p>
 
-Every flower in this garden
+Every flower here
 
 was chosen carefully.
 
@@ -252,16 +222,15 @@ receiving them.
 
 </p>
 
-</div>
-
 </section>
 
-<!-- Ripple Container -->
+<!-- Ripple -->
 
-<div id="ripples"></div>
+<div id="rippleContainer"></div>
 
 <script src="script.js"></script>
 
 </body>
 
 </html>
+```
